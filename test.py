@@ -7,6 +7,7 @@ import time
 
 st.set_page_config(layout="centered")
 st.title('Label Tool')
+pd.options.display.float_format = '{:,.0f}'.format
 
 #
 #汉堡贴纸 甜品贴纸 奶茶贴纸 韩餐日料贴纸 川菜贴纸 粤式早茶 地方特色贴纸 火锅贴纸 烤串贴纸 香锅麻辣烫贴纸 面粉贴纸 异域风味贴纸 小吃贴纸
