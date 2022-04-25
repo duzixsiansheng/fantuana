@@ -14,6 +14,7 @@ pd.options.display.float_format = '{:,.0f}'.format
 #
 
 df = pd.read_csv('fantuan_after.csv')
+df.a = df.汉堡贴纸.astype(int)
 form = st.form(key="annotation",clear_on_submit = True)
 with form:
     cols = st.columns((2))
