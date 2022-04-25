@@ -37,9 +37,9 @@ with form:
     cols = st.columns((4))
     M = cols[0].number_input('小吃贴纸',min_value=-100,max_value=1000,step=1,value=0)
 
-    addrow = {'user_name':user_name,'user_ID':user_ID,'A':A,'B':B,'C':C,
-                'D':D,'E':E,'F':F,'G':G,'H':H
-                ,'I':I,'J':J,'K':K,'L':L,'M':M}
+    addrow = {'user_name':user_name,'user_ID':user_ID,'汉堡贴纸':A,'甜品贴纸':B,'奶茶贴纸':C,
+                '韩餐日料贴纸':D,'川菜贴纸':E,'粤式早茶':F,'地方特色贴纸':G,'火锅贴纸':H
+                ,'烤串贴纸':I,'香锅麻辣烫贴纸':J,'面粉贴纸':K,'异域风味贴纸':L,'小吃贴纸':M}
     submitted = st.form_submit_button(label="submit!")
     if submitted:
         if addrow['user_name'] != '' and addrow['user_ID'] != '':
@@ -47,19 +47,19 @@ with form:
             if  addrow['user_ID'] in idList :
                 index = df[df['user_ID']==addrow['user_ID']].index.values.astype(int)[0]
                 #update
-                df.at[index,'A'] = df.iloc[index]['A'] + addrow['A']
-                df.at[index,'B'] = df.iloc[index]['B'] + addrow['B']
-                df.at[index,'C'] = df.iloc[index]['C'] + addrow['C']
-                df.at[index,'D'] = df.iloc[index]['D'] + addrow['D']
-                df.at[index,'E'] = df.iloc[index]['E'] + addrow['E']
-                df.at[index,'F'] = df.iloc[index]['F'] + addrow['F']
-                df.at[index,'G'] = df.iloc[index]['G'] + addrow['G']
-                df.at[index,'H'] = df.iloc[index]['H'] + addrow['H']
-                df.at[index,'I'] = df.iloc[index]['I'] + addrow['I']
-                df.at[index,'J'] = df.iloc[index]['J'] + addrow['J']
-                df.at[index,'K'] = df.iloc[index]['K'] + addrow['K']
-                df.at[index,'L'] = df.iloc[index]['L'] + addrow['L']
-                df.at[index,'M'] = df.iloc[index]['M'] + addrow['M']
+                df.at[index,'汉堡贴纸'] = df.iloc[index]['汉堡贴纸'] + addrow['汉堡贴纸']
+                df.at[index,'甜品贴纸'] = df.iloc[index]['甜品贴纸'] + addrow['甜品贴纸']
+                df.at[index,'奶茶贴纸'] = df.iloc[index]['奶茶贴纸'] + addrow['奶茶贴纸']
+                df.at[index,'韩餐日料贴纸'] = df.iloc[index]['韩餐日料贴纸'] + addrow['韩餐日料贴纸']
+                df.at[index,'川菜贴纸'] = df.iloc[index]['川菜贴纸'] + addrow['川菜贴纸']
+                df.at[index,'粤式早茶'] = df.iloc[index]['粤式早茶'] + addrow['粤式早茶']
+                df.at[index,'地方特色贴纸'] = df.iloc[index]['地方特色贴纸'] + addrow['地方特色贴纸']
+                df.at[index,'火锅贴纸'] = df.iloc[index]['火锅贴纸'] + addrow['火锅贴纸']
+                df.at[index,'烤串贴纸'] = df.iloc[index]['烤串贴纸'] + addrow['烤串贴纸']
+                df.at[index,'香锅麻辣烫贴纸'] = df.iloc[index]['香锅麻辣烫贴纸'] + addrow['香锅麻辣烫贴纸']
+                df.at[index,'面粉贴纸'] = df.iloc[index]['面粉贴纸'] + addrow['面粉贴纸']
+                df.at[index,'异域风味贴纸'] = df.iloc[index]['异域风味贴纸'] + addrow['异域风味贴纸']
+                df.at[index,'小吃贴纸'] = df.iloc[index]['小吃贴纸'] + addrow['小吃贴纸']
             else:
                 df = df.append(addrow, ignore_index= True)
             df.to_csv('test.csv', index=False)
