@@ -8,7 +8,9 @@ import time
 st.set_page_config(layout="centered")
 st.title('Label Tool')
 
-
+#
+#汉堡贴纸 甜品贴纸 奶茶贴纸 韩餐日料贴纸 川菜贴纸 粤式早茶 地方特色贴纸 火锅贴纸 烤串贴纸 香锅麻辣烫贴纸 面粉贴纸 异域风味贴纸 小吃贴纸
+#
 
 df = pd.read_csv('test.csv')
 form = st.form(key="annotation",clear_on_submit = True)
@@ -17,23 +19,23 @@ with form:
     user_name = cols[0].text_input('User name')
     user_ID = cols[1].text_input('User ID')
     cols = st.columns((4))
-    A = cols[0].number_input('A',min_value=-100,max_value=1000,step=1,value=0)
-    B = cols[1].number_input('B',min_value=-100,max_value=1000,step=1,value=0)
-    C = cols[2].number_input('C',min_value=-100,max_value=1000,step=1,value=0)
-    D = cols[3].number_input('D',min_value=-100,max_value=1000,step=1,value=0)
+    A = cols[0].number_input('汉堡贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    B = cols[1].number_input('甜品贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    C = cols[2].number_input('奶茶贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    D = cols[3].number_input('韩餐日料贴纸',min_value=-100,max_value=1000,step=1,value=0)
     cols = st.columns((4))
-    E = cols[0].number_input('E',min_value=-100,max_value=1000,step=1,value=0)
-    F = cols[1].number_input('F',min_value=-100,max_value=1000,step=1,value=0)
+    E = cols[0].number_input('川菜贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    F = cols[1].number_input('粤式早茶',min_value=-100,max_value=1000,step=1,value=0)
     
-    G = cols[2].number_input('G',min_value=-100,max_value=1000,step=1,value=0)
-    H = cols[3].number_input('H',min_value=-100,max_value=1000,step=1,value=0)
+    G = cols[2].number_input('地方特色贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    H = cols[3].number_input('火锅贴纸',min_value=-100,max_value=1000,step=1,value=0)
     cols = st.columns((4))
-    I = cols[0].number_input('I',min_value=-100,max_value=1000,step=1,value=0)
-    J = cols[1].number_input('J',min_value=-100,max_value=1000,step=1,value=0)
-    K = cols[2].number_input('K',min_value=-100,max_value=1000,step=1,value=0)
-    L = cols[3].number_input('L',min_value=-100,max_value=1000,step=1,value=0)
+    I = cols[0].number_input('烤串贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    J = cols[1].number_input('香锅麻辣烫贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    K = cols[2].number_input('面粉贴纸',min_value=-100,max_value=1000,step=1,value=0)
+    L = cols[3].number_input('异域风味贴纸',min_value=-100,max_value=1000,step=1,value=0)
     cols = st.columns((4))
-    M = cols[0].number_input('M',min_value=-100,max_value=1000,step=1,value=0)
+    M = cols[0].number_input('小吃贴纸',min_value=-100,max_value=1000,step=1,value=0)
 
     addrow = {'user_name':user_name,'user_ID':user_ID,'A':A,'B':B,'C':C,
                 'D':D,'E':E,'F':F,'G':G,'H':H
