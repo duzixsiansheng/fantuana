@@ -42,10 +42,10 @@ with form:
                 ,'烤串贴纸':I,'香锅麻辣烫贴纸':J,'面粉贴纸':K,'异域风味贴纸':L,'小吃贴纸':M}
     submitted = st.form_submit_button(label="submit!")
     if submitted:
-        if addrow['user_name'] != '' and addrow['user_ID'] != '':
-            idList = df['user_ID'].tolist()
-            if  addrow['user_ID'] in idList :
-                index = df[df['user_ID']==addrow['user_ID']].index.values.astype(int)[0]
+        if addrow['微信名'] != '' and addrow['微信号'] != '':
+            idList = df['微信号'].tolist()
+            if  addrow['微信号'] in idList :
+                index = df[df['微信号']==addrow['微信号']].index.values.astype(int)[0]
                 #update
                 df.at[index,'汉堡贴纸'] = df.iloc[index]['汉堡贴纸'] + addrow['汉堡贴纸']
                 df.at[index,'甜品贴纸'] = df.iloc[index]['甜品贴纸'] + addrow['甜品贴纸']
