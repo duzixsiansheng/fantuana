@@ -12,7 +12,7 @@ st.title('Label Tool')
 #汉堡贴纸 甜品贴纸 奶茶贴纸 韩餐日料贴纸 川菜贴纸 粤式早茶 地方特色贴纸 火锅贴纸 烤串贴纸 香锅麻辣烫贴纸 面粉贴纸 异域风味贴纸 小吃贴纸
 #
 
-df = pd.read_csv('test.csv')
+df = pd.read_csv('fantuan.csv')
 form = st.form(key="annotation",clear_on_submit = True)
 with form:
     cols = st.columns((2))
@@ -62,8 +62,8 @@ with form:
                 df.at[index,'小吃贴纸'] = df.iloc[index]['小吃贴纸'] + addrow['小吃贴纸']
             else:
                 df = df.append(addrow, ignore_index= True)
-            df.to_csv('test.csv', index=False)
-            df = pd.read_csv('test.csv')
+            df.to_csv('fantuan.csv', index=False)
+            df = pd.read_csv('fantuan.csv')
         else:
             st.text('Name or ID cannot be empty!')
 def convert_df(df):
@@ -103,4 +103,4 @@ if st.button('Delete That Line!'):
     if (delete_name in df['user_ID'].tolist()):
         st.text('deleting...')
         df.drop(df[df['user_ID'] == delete_name].index,inplace=True)
-        df.to_csv('test.csv', index=False)
+        df.to_csv('fantuan.csv', index=False)
