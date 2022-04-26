@@ -19,7 +19,7 @@ form = st.form(key="annotation",clear_on_submit = True)
 with form:
     cols = st.columns((2))
     #user_name = cols[0].text_input('微信名')
-    user_ID = cols[1].text_input('微信号')
+    user_ID = cols[0].text_input('微信号')
     cols = st.columns((4))
     A = cols[0].number_input('汉堡贴纸',min_value=-100,max_value=1000,step=1,value=0)
     B = cols[1].number_input('甜品贴纸',min_value=-100,max_value=1000,step=1,value=0)
@@ -78,11 +78,11 @@ st.download_button(label=' Download Current Result',
                                 data=dl ,
                                 file_name= 'label.csv')
 
-grab = st.text_input('微信名')
+grab = st.text_input('微信号')
 if st.button('get'):
-    nameList = df['微信名'].tolist()
+    nameList = df['微信号'].tolist()
     if grab in nameList:
-       gindex=df[df['微信名']==grab].index.values.astype(int)[0] 
+       gindex=df[df['微信号']==grab].index.values.astype(int)[0] 
        grab_df = df.loc[[gindex]]
        st.write(grab_df)
     else:
