@@ -18,7 +18,7 @@ df.a = df.汉堡贴纸.astype(int)
 form = st.form(key="annotation",clear_on_submit = True)
 with form:
     cols = st.columns((2))
-    user_name = cols[0].text_input('微信名')
+    #user_name = cols[0].text_input('微信名')
     user_ID = cols[1].text_input('微信号')
     cols = st.columns((4))
     A = cols[0].number_input('汉堡贴纸',min_value=-100,max_value=1000,step=1,value=0)
@@ -39,7 +39,7 @@ with form:
     cols = st.columns((4))
     M = cols[0].number_input('小吃贴纸',min_value=-100,max_value=1000,step=1,value=0)
 
-    addrow = {'微信名':user_name,'微信号':user_ID,'汉堡贴纸':A,'甜品贴纸':B,'奶茶贴纸':C,
+    addrow = {'微信号':user_ID,'汉堡贴纸':A,'甜品贴纸':B,'奶茶贴纸':C,
                 '韩餐日料贴纸':D,'川菜贴纸':E,'粤式早茶':F,'地方特色贴纸':G,'火锅贴纸':H
                 ,'烤串贴纸':I,'香锅麻辣烫贴纸':J,'面粉贴纸':K,'异域风味贴纸':L,'小吃贴纸':M}
     submitted = st.form_submit_button(label="submit!")
