@@ -44,7 +44,7 @@ with form:
                 ,'烤串贴纸':I,'香锅麻辣烫贴纸':J,'面粉贴纸':K,'异域风味贴纸':L,'小吃贴纸':M}
     submitted = st.form_submit_button(label="submit!")
     if submitted:
-        if addrow['微信名'] != '' and addrow['微信号'] != '':
+        if addrow['微信号'] != '':
             idList = df['微信号'].tolist()
             if  addrow['微信号'] in idList :
                 index = df[df['微信号']==addrow['微信号']].index.values.astype(int)[0]
