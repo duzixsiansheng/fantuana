@@ -97,7 +97,7 @@ if st.button('check'):
             
             tmp.append(item)
         if tmp.count(0) < 11:
-            name_price.append(tmp[0])
+            name_price.append(tmp[1])
     st.write(name_price)
 
 delete_name = st.text_input('delete 微信号')
